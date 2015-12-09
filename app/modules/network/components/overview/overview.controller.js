@@ -1,5 +1,5 @@
 angular
-	.module('homie.network')
+	.module('rpicontrol.network')
 	.controller('NetworkOverviewCtrl', NetworkOverviewCtrl);
 
 function NetworkOverviewCtrl($scope, $http, $iconResolver, $ui) {

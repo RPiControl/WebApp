@@ -1,5 +1,5 @@
 angular
-	.module('homie.devices')
+	.module('rpicontrol.devices')
 	.controller('DeviceOverviewCtrl', DeviceOverviewCtrl);
 
 function DeviceOverviewCtrl($scope, $http, $iconResolver) {

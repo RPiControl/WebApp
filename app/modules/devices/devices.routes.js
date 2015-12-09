@@ -1,5 +1,5 @@
 angular
-	.module('homie.devices')
+	.module('rpicontrol.devices')
 	.config(function($stateProvider) {
 		$stateProvider.state('devices', {
 			url: '/devices',

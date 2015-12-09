@@ -1,2 +1,2 @@
 angular
-	.module('homie.devices', []);
+	.module('rpicontrol.devices', []);

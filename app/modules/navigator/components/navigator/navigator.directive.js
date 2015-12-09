@@ -1,5 +1,5 @@
 angular
-	.module('homie.navigator')
+	.module('rpicontrol.navigator')
 	.directive('mjNavigator', navigatorDirective);
 
 function navigatorDirective($navigation, $state) {

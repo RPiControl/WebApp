@@ -1,5 +1,5 @@
 angular
-    .module('homie.navigator')
+    .module('rpicontrol.navigator')
     .config(navigatorConfig);
 
 function navigatorConfig($controllerProvider, $navigationProvider) {

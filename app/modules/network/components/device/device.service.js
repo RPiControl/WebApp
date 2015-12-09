@@ -1,5 +1,5 @@
 angular
-	.module('homie.network')
+	.module('rpicontrol.network')
 	.factory('NetworkDevice', NetworkDeviceFactory);
 
 function NetworkDeviceFactory($http) {

@@ -1,5 +1,5 @@
 angular
-	.module('homie.network')
+	.module('rpicontrol.network')
 	.controller('NetworkDeviceDetailsController', NetworkDeviceDetailsController);
 
 function NetworkDeviceDetailsController($iconResolver, device, $mdDialog, $ui) {

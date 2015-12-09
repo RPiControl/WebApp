@@ -1,2 +1,2 @@
 angular
-	.module('homie.network', []);
+	.module('rpicontrol.network', []);

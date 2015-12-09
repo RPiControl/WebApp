@@ -1,2 +1,2 @@
 angular
-	.module('homie.navigator', []);
+	.module('rpicontrol.navigator', []);

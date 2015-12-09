@@ -1,5 +1,5 @@
 angular
-	.module('homie.network')
+	.module('rpicontrol.network')
 	.directive('networkDeviceNas', NetworkDeviceNas);
 
 function NetworkDeviceNas() {
