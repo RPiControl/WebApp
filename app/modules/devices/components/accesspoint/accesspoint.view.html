@@ -1,0 +1,20 @@
+<md-content style="max-height: 144px">
+	<md-list ng-if="device.wifi && (device.clients.length > 0)">
+		<md-list-item ng-repeat="client in device.clients" class="md-2-line">
+			<md-icon class="md-avatar-icon md-avatar-icon-dark" md-svg-icon="{{client.icon}}"></md-icon>
+			<div class="md-list-item-text" layout="column">
+				<h3>{{client.name}}</h3>
+				<p>{{client.ip}}</p>
+				<md-progress-linear md-mode="determinate" value="{{client.quality}}"></md-progress-linear>
+			</div>
+		</md-list-item>
+	</md-list>
+</md-content>
+<div ng-if="device.clients.length == 0" layout="column" layout-align="start center">
+	<md-icon md-svg-icon="cellphone-link-off" style="height: 48px; width: 48px;"></md-icon>
+	<span class="md-body-2" style="opacity: 0.7">No Devices connected</span>
+</div>
+<div ng-if="!device.wifi" layout="column" layout-align="start center">
+	<md-icon md-svg-icon="access-point" style="height: 48px; width: 48px;"></md-icon>
+	<span class="md-body-2" style="opacity: 0.7">The Wireless Network is disabled.</span>
+</div>

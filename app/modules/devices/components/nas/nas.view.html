@@ -1,0 +1,11 @@
+<md-content style="max-height: 112px">
+	<md-list>
+		<md-list-item ng-repeat="drive in device.drives">
+			<md-icon md-svg-icon="harddisk" class="md-avatar-icon md-avatar-icon-dark"></md-icon>
+			<div class="md-list-item-text" flex>
+				<p>Data ({{drive.used}} GB/{{drive.size}} GB)</p>
+				<md-progress-linear mode="determinate" value="{{drive.percentage}}"></md-progress-linear>
+			</div>
+		</md-list-item>
+	</md-list>
+</md-content>

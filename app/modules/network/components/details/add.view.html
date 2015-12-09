@@ -1,0 +1,26 @@
+<md-dialog>
+	<md-dialog-content class="md-dialog-content" layout="column" style="min-width: 500px">
+		<h2 class="md-title">Add Port Forward</h2>
+		<md-input-container>
+			<label>Label</label>
+			<input type="text" ng-model="vm.forward.label">
+		</md-input-container>
+		<md-select ng-model="vm.forward.protocol" placeholder="Select a Protocol">
+			<md-option>TCP</md-option>
+			<md-option>UDP</md-option>
+			<md-option>ESR</md-option>
+		</md-select>
+		<md-input-container>
+			<label>Incoming Port</label>
+			<input type="number" ng-model="vm.forward.incoming">
+		</md-input-container>
+		<md-input-container>
+			<label>Outgoing Port</label>
+			<input type="number" ng-model="vm.forward.outgoing">
+		</md-input-container>
+	</md-dialog-content>
+	<md-dialog-actions>
+		<md-button ng-click="vm.cancel()">Cancel</md-button>
+		<md-button class="md-accent" ng-click="vm.add()">Add</md-button>
+	</md-dialog-actions>
+</md-dialog>

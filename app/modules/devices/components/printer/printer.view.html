@@ -1,0 +1,11 @@
+<md-content style="max-height: 144px">
+	<md-list ng-if="device.jobs.length > 0">
+		<md-list-item ng-repeat="job in device.jobs">
+			<p>{{job.name}}</p>
+		</md-list-item>
+	</md-list>
+</md-content>
+<div ng-if="device.jobs.length == 0" layout="column" layout-align="start center">
+	<md-icon md-svg-icon="printer" style="height: 48px; width: 48px;"></md-icon>
+	<span class="md-body-2" style="opacity: 0.7">No Jobs queued</span>
+</div>

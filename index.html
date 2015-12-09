@@ -1,0 +1,44 @@
+<html ng-app="rpicontrol">
+    <head>
+        <title ng-bind="($title || 'Dashboard')+ ' - RPi Control'">RPi Control</title>
+        <link rel="stylesheet" href="res/css/angular-material.css"/>
+        <link rel="stylesheet" href="res/css/md-data-table.css"/>
+        <link rel="stylesheet" href="res/css/rpicontrol.css"/>
+        <style>
+            .md-avatar-icon-dark {
+                color: rgba(0,0,0,0.54)!important;
+                background: none!important;
+            }
+
+        </style>
+        <script src="res/js/angular.js"></script>
+        <script src="res/js/angular-animate.js"></script>
+        <script src="res/js/angular-aria.js"></script>
+        <script src="res/js/angular-material.js"></script>
+        <script src="res/js/md-data-table.js"></script>
+        <script src="res/js/angular-ui-router.js"></script>
+        <script src="res/js/angular-ui-router-title.js"></script>
+        <script src="res/js/rpicontrol.js"></script>
+    </head>
+    <body ng-controller="UIController as ui" layout-fill layout="row" style="overflow: hidden">
+        <md-sidenav md-is-locked-open="true" md-component-id="left" class="md-sidenav-left md-whiteframe-4dp">
+            <md-list mj-navigator>
+                <md-list-item ng-repeat="target in targets" ui-sref="{{target.state}}">
+                    <md-icon ng-class="{'md-accent': isInState(target.state)}" ng-if="target.icon" md-svg-icon="{{target.icon}}"></md-icon>
+                    <p class="md-accent">{{target.name}}</p>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <div flex layout-fill layout="column">
+            <md-toolbar ng-style="{'background-color': ui.toolbar.color}" class="md-whiteframe-4dp">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button">
+                        <md-icon md-svg-icon="menu"></md-icon>
+                    </md-button>
+                    <span>{{ui.toolbar.title}}</span>
+                </div>
+            </md-toolbar>
+            <div ui-view="viewport" style="height: calc(100vh - 64px)"></div>
+        </div>
+    </body>
+</html>

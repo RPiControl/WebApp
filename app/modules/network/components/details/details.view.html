@@ -1,0 +1,106 @@
+<md-card>
+    <md-card-header>
+        <md-card-avatar>
+            <md-icon md-svg-icon="{{ctrl.device.icon}}"></md-icon>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span ng-animation-ref="name" class="md-title">{{ctrl.device.name}}</span>
+            <span class="md-subhead">{{ctrl.device.ip}}</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-tabs md-border-bottom md-dynamic-height>
+        <md-tab label="Overview">
+            <md-card-content layout="column">
+                <md-input-container>
+                    <label>Label</label>
+                    <input type="text" ng-model="ctrl.name">
+                </md-input-container>
+                <div layout="row">
+                    <md-input-container flex>
+                        <label>IP Address</label>
+                        <input type="text" ng-model="ctrl.ip">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Mac Address</label>
+                        <input type="text" ng-model="ctrl.device.mac">
+                    </md-input-container>
+                </div>
+            </md-card-content>
+        </md-tab>
+        <md-tab label="Forwarding">
+            <md-data-table-container>
+                <table md-data-table md-row-select="ctrl.selected">
+                    <thead>
+                        <tr>
+                            <th name="Label"></th>
+                            <th name="Protocol"></th>
+                            <th numeric name="Incoming Port"></th>
+                            <th numeric name="Outgoing Port"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr md-auto-select ng-repeat="forward in ctrl.forwards">
+                            <td>{{forward.label}}</td>
+                            <td>{{forward.protocol}}</td>
+                            <td>{{forward.incoming}}</td>
+                            <td>{{forward.outgoing}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-data-table-container>
+            <md-button ng-click="ctrl.addForward()">Add Port Forward</md-button>
+        </md-tab>
+        <md-tab label="Restrictions">
+            <md-card-content>
+                <md-switch ng-model="ctrl.restrictions.internet.disabled">Disable Internet Access</md-switch>
+                <md-switch ng-model="ctrl.restrictions.bandwith.enabled">Limit Bandwith</md-switch>
+                <div ng-if="ctrl.restrictions.bandwith.enabled" layout="row">
+                    <md-input-container>
+                        <label>Bandwith</label>
+                        <input type="number" ng-model="ctrl.restrictions.bandwith.amount">
+                    </md-input-container>
+                    <md-select ng-model="ctrl.restrictions.bandwith.unit">
+                        <md-option>kB/s</md-option>
+                        <md-option>MB/s</md-option>
+                    </md-select>
+                </div>
+                <md-switch ng-model="ctrl.restrictions.budget.enabled">Limit Budget</md-switch>
+                <div ng-if="ctrl.restrictions.budget.enabled" layout="row">
+                    <md-input-container>
+                        <label>Budget</label>
+                        <input type="number" ng-model="ctrl.restrictions.budget.amount">
+                    </md-input-container>
+                    <md-select ng-model="ctrl.restrictions.budget.unit">
+                        <md-option>MB</md-option>
+                        <md-option>GB</md-option>
+                        <md-option>TB</md-option>
+                    </md-select>
+                </div>
+                <md-switch ng-model="ctrl.restrictions.time.enabled">Limit Onlinetime</md-switch>
+                <div ng-if="ctrl.restrictions.time.enabled" layout="row">
+                    <md-input-container>
+                        <label>Onlinetime</label>
+                        <input type="number" ng-model="ctrl.restrictions.time.amount">
+                    </md-input-container>
+                    <md-select ng-model="ctrl.restrictions.time.unit">
+                        <md-option ng-value>Minutes</md-option>
+                        <md-option>Hours</md-option>
+                        <md-option>Days</md-option>
+                        <md-option>Weeks</md-option>
+                        <md-option>Months</md-option>
+                    </md-select>
+                    <md-select ng-model="ctrl.restrictions.time.time">
+                        <md-option>per Day</md-option>
+                        <md-option>per Week</md-option>
+                        <md-option>per Month</md-option>
+                        <md-option>per Year</md-option>
+                    </md-select>
+                </div>
+            </md-card-content>
+        </md-tab>
+    </md-tabs>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="ctrl.cancel()">Cancel</md-button>
+        <md-button ng-click="ctrl.save()">Save</md-button>                            
+    </md-card-actions>
+</md-card>

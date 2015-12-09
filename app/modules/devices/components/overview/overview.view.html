@@ -1,0 +1,25 @@
+<md-content layout="row" layout-wrap layout-fill md-theme="dark">
+	<network-device md-theme="default" ng-repeat="device in devices" device="device" flex="30" ng-switch="device.type">
+		<network-device-ap ng-switch-when="ap"></network-device-ap>
+		<network-device-nas ng-switch-when="nas"></network-device-nas>
+		<network-device-printer ng-switch-when="printer"></network-device-printer>
+		<network-device-router ng-switch-when="router"></network-device-router>
+	</network-device>
+
+		<!--<network-device name="FRITZ!Box" address="192.168.2.1" icon="router-wireless" flex="30"></network-device>
+		<network-device name="Max Server" address="192.168.2.191" icon="server" flex="30"></network-device>
+		<network-device name="Max AP" address="192.168.2.253" flex="30">
+			<network-device-ap></network-device-ap>
+		</network-device>
+		<network-device name="Max AP" address="192.168.2.254" flex="30">
+			<network-device-ap></network-device-ap>
+		</network-device>
+		<network-device name="Max AP" address="192.168.2.255" flex="30">
+			<network-device-ap></network-device-ap>
+		</network-device>
+		<network-device name="Nexus 5" address="192.168.2.24" icon="cellphone-android" flex="30"></network-device>
+		<network-device name="Max NAS" address="192.168.2.54" flex="30">
+			<network-device-nas></network-device-nas>
+		</network-device>
+		<network-device name="MacBook Air" address="192.168.2.28" icon="laptop-mac" flex="30"></network-device>-->
+</md-content>

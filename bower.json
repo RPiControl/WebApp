@@ -1,0 +1,25 @@
+{
+  "name": "rpicontrol-webapp",
+  "description": "",
+  "main": "res/js/rpicontrol.js",
+  "authors": [
+    "Max Jöhnk"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/RPiControl/WebApp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~1.0.0-RC6",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "angular-ui-router-title": "~0.0.4",
+    "angular-google-chart": "~0.1.0",
+    "angular-material-data-table": "~0.8.14"
+  }
+}

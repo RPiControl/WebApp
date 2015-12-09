@@ -1,0 +1,26 @@
+<md-content layout-fill style="height: calc(100vh - 64px)">
+    <md-data-table-container>
+      <table md-data-table>
+        <thead md-order="query.order" md-trigger="onOrderChange">
+          <tr>
+            <th></th>
+            <th name="Name" order-by="name"></th>
+            <th name="IP Address" order-by="ip"></th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="device in devices | orderBy:query.order">
+            <tr ng-if="!device.details" ng-click="showDetails(device)" class="fade">
+                <td><md-icon md-svg-icon="{{device.icon}}"></md-icon></td>
+                <td ng-animation-ref="name">{{device.name}}</td>
+                <td>{{device.ip}}</td>
+            </tr>
+            <tr ng-if="device.details" style="background-color: rgb(238,238,238);" class="fade">
+                <td colspan="3" style="padding: 0;">
+                    <network-device-details device="device" editable="true"></network-device-details>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </md-data-table-container>
+</md-content>
+<!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{desserts.total}}" md-trigger="onPaginationChange"></md-data-table-pagination>-->
